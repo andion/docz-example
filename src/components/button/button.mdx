@@ -1,0 +1,55 @@
+---
+name: Button
+menu: Components
+route: /components/button
+---
+import Button from "./button";
+import { Playground, PropsTable } from  "docz";
+
+# Button
+
+This is `markdown` and below you have a button
+
+<Button> Hi! </Button>
+
+## Button props
+
+<PropsTable of={Button} />
+
+
+## Play with the button
+
+<Playground>
+  <h2> The button </h2>
+  <Button> Default </Button>
+</Playground>
+
+## You can also have a more complex example
+
+<Playground>
+  {() => {
+    class ExampleButton extends React.Component {
+      constructor(props) {
+        super(props);
+        this.state = { inverted: false };
+        this.handleClick = this.handleClick.bind(this);
+      }
+
+      handleClick(e) {
+        e.preventDefault();
+        this.setState(prevState => ({ inverted: !prevState.inverted }));
+      }
+
+      render() {
+        const { inverted } = this.state;
+        return (
+          <Button onClick={this.handleClick} inverted={inverted}>
+            {inverted ? "Inverted" : "Default"}
+          </Button>
+        );
+      }
+    }
+    return <ExampleButton />;
+  }
+}
+</Playground>

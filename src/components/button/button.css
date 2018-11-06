@@ -1,0 +1,15 @@
+.Button {
+  font-size: 1.5em;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border-width: 2px;
+  border-color: #0000d2;
+  background-color: #0000d2;
+  color: white;
+}
+
+.Button___inverted {
+  border-color: #0000d2;
+  background: white;
+  color: #0000d2;
+}
